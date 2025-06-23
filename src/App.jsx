@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       {advice && <h2>{advice.slip.advice}</h2>}
-      <button onClick={handleGetAdvice}>
+      <button onClick={handleGetAdvice} disabled = {loading}>
         {loading ? "please wait..." : "Get random advice"}
       </button>
     </>
