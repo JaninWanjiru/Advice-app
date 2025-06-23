@@ -1,18 +1,23 @@
 import { useState } from "react";
 
 function App() {
-  const [advice, setAdvice] = useState(null)
+  const [advice, setAdvice] = useState(null);
+  const [loading, setLoading] = useState(false);
   async function handleGetAdvice() {
-    const response = await fetch(`https://api.adviceslip.com/advice`)
+    setLoading(true);
+    const response = await fetch(`https://api.adviceslip.com/advice`);
     const advice = await response.json();
     setAdvice(advice);
+    setLoading(false);
   }
-  return(
+  return (
     <>
-      {advice && <h1>{advice.slip.advice}</h1>}
-      <button onClick={handleGetAdvice}>Get random advice</button>
+      {advice && <h2>{advice.slip.advice}</h2>}
+      <button onClick={handleGetAdvice}>
+        {loading ? "please wait..." : "Get random advice"}
+      </button>
     </>
-  )
+  );
 }
 
 export default App;
