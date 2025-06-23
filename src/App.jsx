@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [advice, setAdvice] = useState(null);
@@ -17,10 +17,19 @@ function App() {
       setLoading(false);
     }
   }
+  useEffect(() => {
+    handleGetAdvice();
+  }, []);
+
   return (
     <>
-      {advice && <h2>{advice.slip.advice}</h2>}
       {error && <h2>{error}</h2>}
+      <h1>Advice API</h1>
+      {advice && (
+        <div>
+          <h2>{advice.slip.advice}</h2>
+        </div>
+      )}
       <button onClick={handleGetAdvice} disabled={loading}>
         {loading ? "please wait..." : "Get random advice"}
       </button>
@@ -29,3 +38,5 @@ function App() {
 }
 
 export default App;
+
+
