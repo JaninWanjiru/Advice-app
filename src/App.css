@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color1: #ffffff;
+  --color2: #2e2e2e;
+  --color3: #6bcf8b;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  padding: 2rem;
+  /* font-size: 1.6rem; */
+  background-color: var(--color1);
+}
+
+.app-container {
+  display: flex;
+  height: 60vh;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h1 {
+  color: var(--color2);
+  font-size: 3rem;
+}
+
+h2 {
+  margin-top: 5rem;
+  font-size: 2rem;
+  color: var(--color2);
+}
+
+button {
+  margin-top: 5rem;
+  padding: 1.2rem;
+  width: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  color: var(--color2);
+  background-color: var(--color3);
+  border-radius: 1.2rem;
+  cursor: pointer;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}

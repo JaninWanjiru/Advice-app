@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PuffLoader } from "react-spinners";
+import "./App.css";
 
 function App() {
   const [advice, setAdvice] = useState(null);
@@ -24,13 +25,15 @@ function App() {
 
   return (
     <>
-      {error && <h2>{error}</h2>}
-      <h1>Advice API</h1>
-      {loading && <PuffLoader color="#36d7b7" />}
-      {advice && <h2>{advice.slip.advice}</h2>}
-      <button onClick={handleGetAdvice} disabled={loading}>
-        Get random advice
-      </button>
+      <div className="app-container">
+        {error && <h2>{error}</h2>}
+        <h1>Advice API</h1>
+        <div className="loader">{loading && <PuffLoader />}</div>
+        {advice && <h2>{advice.slip.advice}</h2>}
+        <button onClick={handleGetAdvice} disabled={loading}>
+          New advice
+        </button>
+      </div>
     </>
   );
 }
