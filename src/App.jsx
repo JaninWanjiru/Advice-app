@@ -27,7 +27,7 @@ function App() {
     <>
       <div className="app-container">
         {error && <h2>{error}</h2>}
-        <h1>Advice API</h1>
+        <h1>Random Advice App</h1>
         <div className="loader">{loading && <PuffLoader />}</div>
         {advice && <h2>{advice.slip.advice}</h2>}
         <button onClick={handleGetAdvice} disabled={loading}>
