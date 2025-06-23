@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PuffLoader } from "react-spinners";
 
 function App() {
   const [advice, setAdvice] = useState(null);
@@ -25,18 +26,13 @@ function App() {
     <>
       {error && <h2>{error}</h2>}
       <h1>Advice API</h1>
-      {advice && (
-        <div>
-          <h2>{advice.slip.advice}</h2>
-        </div>
-      )}
+      {loading && <PuffLoader color="#36d7b7" />}
+      {advice && <h2>{advice.slip.advice}</h2>}
       <button onClick={handleGetAdvice} disabled={loading}>
-        {loading ? "please wait..." : "Get random advice"}
+        Get random advice
       </button>
     </>
   );
 }
 
 export default App;
-
-
